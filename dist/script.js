@@ -536,8 +536,9 @@ proto.onActionButtonClick = function(e) {
 // hack until we can import entire custom-elements
 // using HTML Imports (bug 877072).
 var template = document.createElement('template');
+var htmlDirection = 'dir="' + document.dir + '"';
 template.innerHTML = [
-  '<div class="inner">',
+  '<div class="inner" ' + htmlDirection + '>',
     '<button class="action-button">',
       '<content select=".l10n-action"></content>',
     '</button>',

@@ -211,3 +211,7 @@ a:focus,
 .icon-back:before { content: 'back'; }
 .icon-menu:before { content: 'menu'; }
 .icon-close:before { content: 'close'; }
+
+.inner[dir="rtl"] .icon-back:before {
+  transform: scaleX(-1);
+};

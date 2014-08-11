@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html dir="rtl">
 <head>
   <meta charset="utf-8">
   <title>Header Demo</title>
@@ -26,7 +26,7 @@
   <script>
     window.GAIA_HEADER_BASE_URL = './';
   </script>
-  <!-- <link href="bower_components/gaia-icons/style-embedded.css" type="text/css" rel="stylesheet"> -->
+  <link href="bower_components/gaia-icons/style-embedded.css" type="text/css" rel="stylesheet">
   <script src="dist/script.js"></script>
 </head>
 
@@ -35,7 +35,7 @@
     <h1>Keyboard Settings</h1>
   </gaia-header>
 
-  <gaia-header action="menu">
+  <!-- <gaia-header action="menu">
     <h1>Action 'menu'</h1>
   </gaia-header>
 
@@ -68,12 +68,7 @@
     <button>Done</button>
   </gaia-header>
 
-  <div id="message"></div>
-
-  <p><em>The is a bug that breaks shadow-dom layout when the `textContent` of a projected-content node is changed. Use the buttons below to break the layout of the last header. If the element is reflowed (by showing and hiding) its layout is fixed.</em></p>
-
-  <button id="breakit">Break it</button>
-  <button id="fixit">Fix it</button>
+  <div id="message"></div> -->
 
   <script>
   var els = document.querySelectorAll('gaia-header');
@@ -82,17 +77,6 @@
       var num = i + 1;
       message.textContent = 'header (' + num + ') action (' + e.detail.type + ')';
     });
-  });
-
-  breakit.addEventListener('click', function(e) {
-    title.textContent = 'I\'m broken :(';
-  });
-
-  fixit.addEventListener('click', function(e) {
-    title.textContent = 'Forcing reflow fixes me :\'(';
-    header.style.display = 'none';
-    var reflow = header.offsetTop;
-    header.style.display = '';
   });
   </script>
 </body>
